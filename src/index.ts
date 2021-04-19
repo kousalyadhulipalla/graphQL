@@ -11,7 +11,7 @@ import { graphqlExpress } from "graphql-server-express";
   const app = express();
   const server = new ApolloServer({typeDefs,resolvers});
   server.applyMiddleware({app});
-  await mongoose.connect('mongodb://localhost:27017/',{useNewUrlParser:true, useUnifiedTopology:true})
+  await mongoose.connect('mongodb://localhost:27017/Reservation',{useNewUrlParser:true, useUnifiedTopology:true})
   .catch(err => console.log(err))
   // app.use('/graphql', bodyParser.json(), graphqlExpress({ schema:schema  }));
   app.listen({port:4000}, () =>
